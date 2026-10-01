@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burger Badut - Sensasi Burger Juicy & Ceria!</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <!-- Google Fonts: Fredoka & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --primary-orange: #ff6b00;
+        --primary-orange-hover: #e05e00;
+        --accent-yellow: #ffd600;
+        --warm-brown: #3e2723;
+        --bg-cream: #fffbf0;
+        --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+        --hover-shadow: 0 15px 30px rgba(255, 107, 0, 0.15);
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg-cream);
+        color: var(--warm-brown);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-brand {
+        font-family: "Fredoka", cursive;
+      }
+
+      /* Top Bar Announcement */
+      .top-bar {
+        background: var(--warm-brown);
+        color: #fff;
+        font-size: 0.85rem;
+      }
+
+      /* Navbar Customization */
+      .navbar {
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-orange) !important;
+      }
+
+      .brand-icon {
+        background: var(--accent-yellow);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-orange);
+        font-size: 1.4rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--warm-brown);
+        margin: 0 6px;
+        transition: color 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-orange) !important;
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(135deg, #fff3d6 0%, #ffe0b2 100%);
+        position: relative;
+        padding: 90px 0 70px 0;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        overflow: hidden;
+      }
+
+      .hero-badge {
+        background: var(--accent-yellow);
+        color: var(--warm-brown);
+        font-weight: 600;
+        padding: 6px 16px;
+        border-radius: 30px;
+        display: inline-block;
+        font-size: 0.9rem;
+      }
+
+      .hero-title {
+        font-size: 3.2rem;
+        line-height: 1.2;
+        color: var(--primary-orange);
+      }
+
+      .btn-custom-primary {
+        background-color: var(--primary-orange);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 30px;
+        font-weight: 600;
+        box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom-primary:hover {
+        background-color: var(--primary-orange-hover);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+      }
+
+      .btn-custom-outline {
+        border: 2px solid var(--warm-brown);
+        color: var(--warm-brown);
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom-outline:hover {
+        background-color: var(--warm-brown);
+        color: white;
+      }
+
+      .hero-img {
+        max-width: 100%;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 30px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        border: 6px solid #ffffff;
+      }
+
+      /* Section Titles */
+      .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary-orange);
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        width: 60px;
+        height: 4px;
+        background: var(--accent-yellow);
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      /* Filter Tabs */
+      .nav-pills .nav-link {
+        border-radius: 25px;
+        padding: 8px 22px;
+        font-weight: 600;
+        background-color: #efebe9;
+        color: var(--warm-brown);
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-pills .nav-link.active,
+      .nav-pills .show > .nav-link {
+        background-color: var(--primary-orange);
+        color: white;
+        box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
+      }
+
+      /* Card Menu Customization */
+      .menu-card {
+        border: none;
+        border-radius: 20px;
+        background: #ffffff;
+        box-shadow: var(--card-shadow);
+        transition: all 0.3s ease;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--hover-shadow);
+      }
+
+      .card-img-wrapper {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .menu-card:hover .card-img-top {
+        transform: scale(1.08);
+      }
+
+      .badge-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        z-index: 2;
+      }
+
+      .badge-pedas {
+        background-color: #ff3d00;
+        color: white;
+      }
+
+      .badge-favorit {
+        background-color: var(--accent-yellow);
+        color: var(--warm-brown);
+      }
+
+      .badge-rekomendasi {
+        background-color: #2e7d32;
+        color: white;
+      }
+
+      .menu-price {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--primary-orange);
+        font-family: "Fredoka", cursive;
+      }
+
+      .card-body {
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .card-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .card-text {
+        color: #666;
+        font-size: 0.86rem;
+        line-height: 1.4;
+        flex-grow: 1;
+      }
+
+      /* Features / Why Choose Us */
+      .feature-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        box-shadow: var(--card-shadow);
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 2px solid #fff3e0;
+      }
+
+      .feature-card:hover {
+        border-color: var(--accent-yellow);
+        transform: translateY(-5px);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: #fff3e0;
+        color: var(--primary-orange);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: var(--card-shadow);
+        position: relative;
+        margin-bottom: 15px;
+        height: 100%;
+      }
+
+      .user-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--accent-yellow);
+      }
+
+      .star-rating {
+        color: var(--accent-yellow);
+        font-size: 0.9rem;
+      }
+
+      /* Floating Cart Button */
+      .floating-cart {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 999;
+        background: var(--primary-orange);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 12px 24px;
+        box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .floating-cart:hover {
+        background: var(--primary-orange-hover);
+        transform: scale(1.05);
+        color: white;
+      }
+
+      .cart-count {
+        background: var(--accent-yellow);
+        color: var(--warm-brown);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      /* Contact & Info Box */
+      .info-box {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: var(--card-shadow);
+        height: 100%;
+        border: 2px solid #fff3e0;
+      }
+
+      .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .info-icon {
+        background: #ffe0b2;
+        color: var(--primary-orange);
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--warm-brown);
+        color: #d7ccc8;
+        padding: 50px 0 20px 0;
+      }
+
+      footer h5 {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      footer a {
+        color: #d7ccc8;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      footer a:hover {
+        color: var(--accent-yellow);
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.3rem;
+        }
+        .section-title h2 {
+          font-size: 2rem;
+        }
+        .hero-section {
+          padding: 40px 0;
+          text-align: center;
+        }
+        .hero-btn-group {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar Info -->
+    <div class="top-bar py-1 d-none d-md-block">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div>
+          <i class="fa-solid fa-clock me-1 text-warning"></i> Buka Setiap Hari: 11.00 - 22.00 WIB
+          <span class="mx-2">|</span>
+          <i class="fa-solid fa-location-dot me-1 text-warning"></i> Jl. Burger Badut Raya No. 45, Kota Kuliner
+        </div>
+        <div>
+          <span class="badge bg-warning text-dark"><i class="fa-solid fa-certificate me-1"></i> 100% Juicy & Fresh Daily</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <div class="brand-icon">
+            <i class="fa-solid fa-burger"></i>
+          </div>
+          <span>Burger <span class="text-warning">Badut</span></span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#beranda">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Daftar Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimoni">Testimoni</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontak">Lokasi & Kontak</a>
+            </li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a href="#menu" class="btn btn-custom-primary btn-sm px-3"> <i class="fa-solid fa-utensils me-1"></i> Pesan Sekarang </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <span class="hero-badge mb-3"> <i class="fa-solid fa-fire text-danger me-1"></i> Sensasi Burger & Sosis Bakar Lezat! </span>
+            <h1 class="hero-title fw-bold mb-3">Bikin Harimu Ceria Bersama <br /><span class="text-warning">Burger Badut!</span></h1>
+            <p class="lead text-muted mb-4">Nikmati kelezatan patty daging sapi pilihan yang juicy, sosis bakar jumbo saus spesial, keju melted, serta menu pendamping lainnya!</p>
+            <div class="d-flex flex-wrap gap-3 hero-btn-group">
+              <a href="#menu" class="btn btn-custom-primary"> <i class="fa-solid fa-book-open me-2"></i>Lihat Menu </a>
+              <a href="https://wa.me/6281234567890?text=Halo%20Burger%20Badut,%20saya%20mau%20tanya%20menu%20dan%20pesan" target="_blank" class="btn btn-custom-outline">
+                <i class="fa-brands fa-whatsapp text-success me-2"></i>Chat WhatsApp
+              </a>
+            </div>
+
+            <div class="row mt-4 pt-3 border-top border-warning border-opacity-25">
+              <div class="col-4">
+                <h4 class="mb-0 fw-bold text-danger">16+</h4>
+                <small class="text-muted">Varian Menu</small>
+              </div>
+              <div class="col-4">
+                <h4 class="mb-0 fw-bold text-danger">4.9★</h4>
+                <small class="text-muted">Rating Pelanggan</small>
+              </div>
+              <div class="col-4">
+                <h4 class="mb-0 fw-bold text-danger">100%</h4>
+                <small class="text-muted">Fresh & Juicy</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="hero-img-container">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Burger Badut Spesial" class="hero-img img-fluid" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keunggulan Section -->
+    <section class="py-5">
+      <div class="container py-3">
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-burger"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Patty Sapi Asli</h5>
+              <p class="text-muted small mb-0">Daging pilihan dengan bumbu grill homemade yang juicy.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-fire"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Sosis Bakar Jumbo</h5>
+              <p class="text-muted small mb-0">Sosis premium ukuran jumbo dengan olesan saus bakar barbekyu.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-cheese"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Keju Melted Premium</h5>
+              <p class="text-muted small mb-0">Lelehan keju cheddar berkualitas tinggi di setiap gigitan.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Harga Bersahabat</h5>
+              <p class="text-muted small mb-0">Porsi mengenyangkan dengan harga sangat ramah di kantong.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Menu Makanan & Minuman -->
+    <section id="menu" class="py-5 bg-white">
+      <div class="container">
+        <div class="section-title">
+          <h2>Menu Spesial Kami</h2>
+          <p class="text-muted mt-2">Pilih varian kesukaanmu dari menu makanan & minuman segar pilihan!</p>
+        </div>
+
+        <!-- Filter Category Buttons -->
+        <ul class="nav nav-pills justify-content-center mb-5" id="menuTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#tab-all" type="button" role="tab"><i class="fa-solid fa-border-all me-1"></i> Semua Menu</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="makanan-tab" data-bs-toggle="pill" data-bs-target="#tab-makanan" type="button" role="tab"><i class="fa-solid fa-burger me-1"></i> Makanan & Sosis Bakar</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="minuman-tab" data-bs-toggle="pill" data-bs-target="#tab-minuman" type="button" role="tab"><i class="fa-solid fa-glass-water me-1"></i> Minuman</button>
+          </li>
+        </ul>
+
+        <!-- Tab Contents -->
+        <div class="tab-content" id="menuTabContent">
+          <!-- ALL MENU TAB -->
+          <div class="tab-pane fade show active" id="tab-all" role="tabpanel">
+            <div class="row g-4" id="all-menu-container"></div>
+          </div>
+          <!-- MAKANAN TAB -->
+          <div class="tab-pane fade" id="tab-makanan" role="tabpanel">
+            <div class="row g-4" id="makanan-menu-container"></div>
+          </div>
+          <!-- MINUMAN TAB -->
+          <div class="tab-pane fade" id="tab-minuman" role="tabpanel">
+            <div class="row g-4" id="minuman-menu-container"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="tentang" class="py-5" style="background-color: #fff9f2">
+      <div class="container py-4">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="Pembuatan Burger Badut" class="img-fluid rounded-4 shadow-lg border border-5 border-white" />
+          </div>
+          <div class="col-lg-6">
+            <span class="badge bg-danger text-white mb-2 px-3 py-2 rounded-pill">Cerita Kami</span>
+            <h2 class="fw-bold mb-3 display-6">Sajian Burger & Sosis Bakar Lezat Sejak 2019</h2>
+            <p class="text-muted">
+              Berawal dari impian menyajikan kuliner berkualitas restoran bintang lima dengan harga kaki lima, <strong>Burger Badut</strong> hadir untuk menemani waktu santai Anda. Nama "Badut" mencerminkan keceriaan dan kebahagiaan yang
+              kami sajikan dalam setiap gigitan menu hangat kami.
+            </p>
+            <p class="text-muted">Kami menggunakan bahan-bahan pilihan seperti patty daging sapi dan sosis jumbo berkualitas tinggi yang dipanggang dengan teknik khusus agar cita rasanya tetap terjaga sempurna.</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                <span class="fw-semibold">Bahan Premium</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                <span class="fw-semibold">Freshly Made</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="py-5">
+      <div class="container">
+        <div class="section-title">
+          <h2>Kata Pelanggan Setia</h2>
+          <p class="text-muted">Ulasan jujur dari pengunjung yang sudah ketagihan Burger Badut</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="star-rating mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="text-muted italic mb-4">"Burger Double Beef Cheese-nya juara banget! Dagingnya tebal dan juicy, kejunya lumer di mulut. Recommended!"</p>
+              <div class="d-flex align-items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Rina" class="user-avatar" />
+                <div>
+                  <h6 class="mb-0 fw-bold">Rina Sastrowijoyo</h6>
+                  <small class="text-muted">Food Blogger Lokal</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="star-rating mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="text-muted italic mb-4">"Sosis Bakar Jumbonya mantap banget bumbunya meresap! Pas banget nemenin nongkrong sore. Milkshake cokelatnya juga juara!"</p>
+              <div class="d-flex align-items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Dimas" class="user-avatar" />
+                <div>
+                  <h6 class="mb-0 fw-bold">Dimas Anggara</h6>
+                  <small class="text-muted">Mahasiswa Kuliner</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="star-rating mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="text-muted italic mb-4">"Tempat langganan makan malam bareng keluarga. Pelayanan cepat dan burgernya selalu hangat pas disajikan."</p>
+              <div class="d-flex align-items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Anita" class="user-avatar" />
+                <div>
+                  <h6 class="mb-0 fw-bold">Anita Wijaya</h6>
+                  <small class="text-muted">Pelanggan Setia</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak & Lokasi Section -->
+    <section id="kontak" class="py-5 bg-white">
+      <div class="container">
+        <div class="section-title">
+          <h2>Lokasi & Kontak</h2>
+          <p class="text-muted">Mampir langsung ke outlet kami atau order online via WhatsApp</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="info-box">
+              <h4 class="fw-bold mb-4 text-danger text-center font-brand">Informasi Burger Badut</h4>
+
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="info-item">
+                    <div class="info-icon">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold mb-1">Alamat Outlet</h6>
+                      <p class="text-muted small mb-0">Jl. Burger Badut Raya No. 45, Pusat Kuliner Senang, Kota Kuliner (Sebelah Mall Utama)</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="info-item">
+                    <div class="info-icon">
+                      <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold mb-1">Jam Operasional</h6>
+                      <p class="text-muted small mb-0">Senin - Minggu: 11.00 - 22.00 WIB<br /><span class="text-success fw-bold">(Buka Setiap Hari)</span></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="info-item mb-0">
+                    <div class="info-icon">
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div class="w-100 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                      <div>
+                        <h6 class="fw-bold mb-1">Pemesanan Direct WhatsApp</h6>
+                        <p class="text-muted small mb-0">+62 831-6772-8228 (Layanan Cepat Pesan Antar)</p>
+                      </div>
+                      <a href="https://wa.me/6283167728228" target="_blank" class="btn btn-sm btn-custom-primary rounded-pill px-4"> <i class="fa-brands fa-whatsapp me-1"></i> Chat WhatsApp </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Cart Button -->
+    <button class="floating-cart" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+      <i class="fa-solid fa-basket-shopping fs-5"></i>
+      <span>Keranjang</span>
+      <span class="cart-count" id="cartBadge">0</span>
+    </button>
+
+    <!-- Cart / Order Summary Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 border-0">
+          <div class="modal-header bg-warning text-dark rounded-top-4">
+            <h5 class="modal-title font-brand" id="cartModalLabel"><i class="fa-solid fa-receipt me-2"></i> Ringkasan Pesanan</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div id="cartItemsList"></div>
+
+            <hr class="my-3" />
+
+            <div class="mb-3">
+              <label for="customerName" class="form-label fw-bold small text-muted">Nama Pemesan</label>
+              <input type="text" class="form-control rounded-3" id="customerName" placeholder="Masukkan nama Anda" />
+            </div>
+
+            <div class="mb-3">
+              <label for="orderType" class="form-label fw-bold small text-muted">Tipe Pesanan</label>
+              <select class="form-select rounded-3" id="orderType">
+                <option value="Dine-In (Makan di Tempat)">Dine-In (Makan di Tempat)</option>
+                <option value="Take Away (Bungkus)">Take Away (Bungkus)</option>
+                <option value="Delivery (Pengiriman)">Delivery (Pengiriman)</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="orderNotes" class="form-label fw-bold small text-muted">Catatan Tambahan (Opsional)</label>
+              <textarea class="form-control rounded-3" id="orderNotes" rows="2" placeholder="Contoh: Tanpa bawang bombay, ekstra saus sambal..."></textarea>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded-3 mt-3">
+              <span class="fw-bold">Total Pembayaran:</span>
+              <span class="fs-4 fw-bold text-danger font-brand" id="cartTotal">Rp 0</span>
+            </div>
+          </div>
+          <div class="modal-footer bg-light rounded-bottom-4">
+            <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup</button>
+            <button type="button" class="btn btn-custom-primary rounded-pill px-4" id="btnCheckoutWA"><i class="fa-brands fa-whatsapp me-2"></i> Order via WA</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-lg-4 col-md-6">
+            <a class="navbar-brand d-flex align-items-center gap-2 mb-3" href="#">
+              <div class="brand-icon">
+                <i class="fa-solid fa-burger"></i>
+              </div>
+              <span class="text-white">Burger <span class="text-warning">Badut</span></span>
+            </a>
+            <p class="small text-muted mb-3">Pelopor kelezatan burger & sosis bakar berkualitas tinggi. Dibuat penuh cinta untuk keceriaan harimu!</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-light rounded-circle"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5>Navigasi</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2"><a href="#beranda">Beranda</a></li>
+              <li class="mb-2"><a href="#menu">Daftar Menu</a></li>
+              <li class="mb-2"><a href="#tentang">Tentang Kami</a></li>
+              <li class="mb-2"><a href="#testimoni">Testimoni</a></li>
+              <li class="mb-2"><a href="#kontak">Kontak</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5>Favorit Menu</h5>
+            <ul class="list-unstyled small">
+              <li class="mb-2"><a href="#menu">Burger Badut Spesial Keju</a></li>
+              <li class="mb-2"><a href="#menu">Sosis Bakar Jumbo Spesial</a></li>
+              <li class="mb-2"><a href="#menu">Crispy Chicken Burger</a></li>
+              <li class="mb-2"><a href="#menu">Milkshake Cokelat Badut</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5>Jam Operasional</h5>
+            <p class="small text-muted mb-1">Setiap Hari:</p>
+            <p class="fw-bold text-warning mb-3">11:00 - 22:00 WIB</p>
+            <small class="text-muted">Menerima pesanan katering & rombongan.</small>
+          </div>
+        </div>
+
+        <hr class="border-secondary" />
+
+        <div class="text-center small text-muted py-2">&copy; 2026 Burger Badut. All Rights Reserved. Designed for UMKM Indonesia.</div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Data Menu Lengkap (Termasuk Sosis Bakar Jumbo & Minuman)
+      const menuData = [
+        // --- MAKANAN & SOSIS BAKAR ---
+        {
+          id: 1,
+          category: "makanan",
+          name: "Burger Badut Original",
+          price: 18000,
+          badge: "FAVORIT",
+          badgeClass: "badge-favorit",
+          desc: "Burger klasik dengan patty daging sapi panggang empuk, selada segar, tomat, dan saus spesial.",
+          img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 2,
+          category: "makanan",
+          name: "Burger Badut Spesial Keju",
+          price: 23000,
+          badge: "REKOMENDASI",
+          badgeClass: "badge-rekomendasi",
+          desc: "Patty sapi juicy dengan tambahan lembaran keju cheddar leleh berlimpah dan mayones lezat.",
+          img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 3,
+          category: "makanan",
+          name: "Double Beef Melted Cheese",
+          price: 32000,
+          badge: "BEST SELLER",
+          badgeClass: "badge-favorit",
+          desc: "Dua lapis patty daging sapi premium disiram lelehan saus keju cheddar creamy yang melimpah.",
+          img: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 4,
+          category: "makanan",
+          name: "Sosis Bakar Jumbo Spesial",
+          price: 20000,
+          badge: "FAVORIT",
+          badgeClass: "badge-favorit",
+          desc: "Sosis sapi ukuran jumbo dibakar dengan olesan saus barbekyu spesial, disajikan hangat dengan saus sambal.",
+          img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 5,
+          category: "makanan",
+          name: "Crispy Chicken Burger",
+          price: 21000,
+          badge: "REKOMENDASI",
+          badgeClass: "badge-rekomendasi",
+          desc: "Fillet dada ayam goreng tepung krispi renyah di luar, lembut di dalam dengan saus tartare.",
+          img: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 6,
+          category: "makanan",
+          name: "Burger Spicy Jalapeno",
+          price: 26000,
+          badge: "PEDAS",
+          badgeClass: "badge-pedas",
+          desc: "Sensasi pedas menggigit dari irisan cabai jalapeno segar berpadu dengan patty sapi gurih.",
+          img: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 7,
+          category: "makanan",
+          name: "French Fries Jumbo Krispi",
+          price: 15000,
+          badge: "SNACK",
+          badgeClass: "badge-rekomendasi",
+          desc: "Kentang goreng potong panjang bertekstur renyah keemasan dengan taburan bumbu gurih.",
+          img: "https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 8,
+          category: "makanan",
+          name: "Spicy Nugget Krispi",
+          price: 18000,
+          badge: "FAVORIT",
+          badgeClass: "badge-pedas",
+          desc: "Nugget ayam pilihan berbalut tepung roti krispi dengan sensasi rasa pedas gurih yang nagih.",
+          img: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80",
+        },
+
+        // --- MINUMAN ---
+        {
+          id: 9,
+          category: "minuman",
+          name: "Es Teh Manis Segar",
+          price: 5000,
+          badge: "FRESH",
+          badgeClass: "badge-rekomendasi",
+          desc: "Seduhan teh berkualitas tinggi dengan gula tebu asli yang sangat menyegarkan dahaga.",
+          img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 10,
+          category: "minuman",
+          name: "Lemon Tea Dingin",
+          price: 8000,
+          badge: "SEGAR",
+          badgeClass: "badge-favorit",
+          desc: "Perpaduan teh pilihan dan perasan air lemon segar kaya vitamin C penambah semangat.",
+          img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 11,
+          category: "minuman",
+          name: "Milkshake Cokelat Badut",
+          price: 15000,
+          badge: "FAVORIT",
+          badgeClass: "badge-favorit",
+          desc: "Susu segar diblend dengan es krim cokelat lembut dan taburan serutan cokelat.",
+          img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=500&q=80",
+        },
+        {
+          id: 12,
+          category: "minuman",
+          name: "Milkshake Vanilla Oreo",
+          price: 15000,
+          badge: "SIGNATURE",
+          badgeClass: "badge-rekomendasi",
+          desc: "Milkshake rasa vanila lezat berpadu remahan biskuit Oreo cokelat renyah.",
+          img: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=500&q=80",
+        },
+      ];
+
+      let cart = [];
+
+      function formatRupiah(number) {
+        return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(number);
+      }
+
+      function renderMenu() {
+        const allContainer = document.getElementById("all-menu-container");
+        const makananContainer = document.getElementById("makanan-menu-container");
+        const minumanContainer = document.getElementById("minuman-menu-container");
+
+        allContainer.innerHTML = "";
+        makananContainer.innerHTML = "";
+        minumanContainer.innerHTML = "";
+
+        menuData.forEach((item) => {
+          const cardHTML = `
+                    <div class="col-lg-3 col-md-6">
+                        <div class="menu-card">
+                            <div class="card-img-wrapper">
+                                <span class="badge-tag ${item.badgeClass}">${item.badge}</span>
+                                <img src="${item.img}" class="card-img-top" alt="${item.name}">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">${item.desc}</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                                    <span class="menu-price">${formatRupiah(item.price)}</span>
+                                    <button onclick="addToCart(${item.id})" class="btn btn-sm btn-custom-primary">
+                                        <i class="fa-solid fa-plus me-1"></i> Tambah
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+          allContainer.innerHTML += cardHTML;
+          if (item.category === "makanan") {
+            makananContainer.innerHTML += cardHTML;
+          } else if (item.category === "minuman") {
+            minumanContainer.innerHTML += cardHTML;
+          }
+        });
+      }
+
+      function addToCart(itemId) {
+        const item = menuData.find((m) => m.id === itemId);
+        const existingIndex = cart.findIndex((c) => c.id === itemId);
+
+        if (existingIndex > -1) {
+          cart[existingIndex].qty += 1;
+        } else {
+          cart.push({ ...item, qty: 1 });
+        }
+
+        updateCartUI();
+
+        const cartBtn = document.getElementById("cartBtn");
+        cartBtn.style.transform = "scale(1.15)";
+        setTimeout(() => {
+          cartBtn.style.transform = "none";
+        }, 200);
+      }
+
+      function updateCartUI() {
+        const cartBadge = document.getElementById("cartBadge");
+        const cartItemsList = document.getElementById("cartItemsList");
+        const cartTotal = document.getElementById("cartTotal");
+
+        const totalCount = cart.reduce((sum, i) => sum + i.qty, 0);
+        const totalPrice = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+
+        cartBadge.innerText = totalCount;
+        cartTotal.innerText = formatRupiah(totalPrice);
+
+        if (cart.length === 0) {
+          cartItemsList.innerHTML = `
+                    <div class="text-center py-4 text-muted">
+                        <i class="fa-solid fa-basket-shopping fs-1 mb-2 opacity-50"></i>
+                        <p class="mb-0">Keranjang Anda masih kosong.</p>
+                        <small>Pilih menu favoritmu terlebih dahulu!</small>
+                    </div>
+                `;
+          return;
+        }
+
+        let listHTML = "";
+        cart.forEach((item) => {
+          listHTML += `
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <h6 class="mb-0 fw-semibold">${item.name}</h6>
+                            <small class="text-muted">${formatRupiah(item.price)} x ${item.qty}</small>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <button onclick="changeQty(${item.id}, -1)" class="btn btn-sm btn-outline-secondary rounded-circle px-2 py-0">-</button>
+                            <span class="fw-bold">${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)" class="btn btn-sm btn-outline-secondary rounded-circle px-2 py-0">+</button>
+                            <span class="fw-bold text-danger ms-2">${formatRupiah(item.price * item.qty)}</span>
+                        </div>
+                    </div>
+                `;
+        });
+
+        cartItemsList.innerHTML = listHTML;
+      }
+
+      function changeQty(itemId, delta) {
+        const index = cart.findIndex((c) => c.id === itemId);
+        if (index > -1) {
+          cart[index].qty += delta;
+          if (cart[index].qty <= 0) {
+            cart.splice(index, 1);
+          }
+        }
+        updateCartUI();
+      }
+
+      document.getElementById("btnCheckoutWA").addEventListener("click", function () {
+        if (cart.length === 0) {
+          alert("Keranjang belanja Anda masih kosong!");
+          return;
+        }
+
+        const name = document.getElementById("customerName").value.trim() || "Pelanggan";
+        const orderType = document.getElementById("orderType").value;
+        const notes = document.getElementById("orderNotes").value.trim();
+
+        let total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+
+        let message = `Halo *Burger Badut*, saya mau memesan makanan:\n\n`;
+        message += `*Nama Pemesan:* ${name}\n`;
+        message += `*Tipe Pesanan:* ${orderType}\n\n`;
+        message += `*Daftar Pesanan:*\n`;
+
+        cart.forEach((item, idx) => {
+          message += `${idx + 1}. ${item.name} (${item.qty}x) - ${formatRupiah(item.price * item.qty)}\n`;
+        });
+
+        message += `\n*Total Pembayaran:* ${formatRupiah(total)}\n`;
+        if (notes) {
+          message += `*Catatan:* ${notes}\n`;
+        }
+        message += `\nMohon diproses ya, terima kasih!`;
+
+        const phone = "6283167728228";
+        const waURL = `https://wa.me/6283167728228`;
+
+        window.open(waURL, "_blank");
+      });
+
+      window.onload = function () {
+        renderMenu();
+        updateCartUI();
+      };
+    </script>
+  </body>
+</html>
