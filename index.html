@@ -1149,7 +1149,9 @@
         message += `\nMohon diproses ya, terima kasih!`;
 
         const phone = "6283167728228";
-        const waURL = `https://wa.me/6283167728228`;
+
+        // --- BAGIAN INI YANG DIPERBAIKI ---
+        const waURL = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
         window.open(waURL, "_blank");
       });
